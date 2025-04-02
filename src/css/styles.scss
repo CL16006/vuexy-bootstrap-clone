@@ -1,0 +1,17 @@
+// Sobrescribe las variables de Bootstrap antes de importarlo
+$primary: #7367f0;    // Color primario
+$secondary: #808390;  // Color secundario
+$success: #28c76f;    // Color de éxito
+$info: #00bad1;       // Color de información
+$warning: #ff9f43;    // Color de advertencia
+$danger: #ff4c51;     // Color de peligro
+$light: #f9f9fafa;      // Color claro
+$dark: #444a6993;
+
+
+@import "bootstrap/scss/bootstrap";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+body {
+  font-family: 'Public Sans', sans-serif;
+}
