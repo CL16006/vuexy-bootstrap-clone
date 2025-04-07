@@ -15,7 +15,7 @@ function toggleSidebarCollapse() {
 </script>
 <template>
   <div class="container">
-    <HeaderComponent></HeaderComponent>
+    <HeaderComponent  @toggle="toggleSidebarCollapse"></HeaderComponent>
     <SideBarComponent
       :isCollapsed="isSidebarCollapsed"
       @toggle="toggleSidebarCollapse"

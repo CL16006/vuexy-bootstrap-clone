@@ -99,10 +99,10 @@ const linkList = [
     <div class="container-fluid">
       <div class="flex-column">
         <img src="/assets/img/airplane.svg" alt="logo" width="100" v-if="!props.isCollapsed" />
-        <h6 v-if="!props.isCollapsed">Demo Bootstrap</h6>
+        <h6 class="d-inline-flex p-2">Demo Bootstrap</h6>
         <i
           @click="emit('toggle')"
-          :class="isCollapsed ? 'bi bi-circle' : 'bi bi-record-circle'"
+          :class="isCollapsed ? 'bi bi-circle d-none d-lg-inline-flex' : 'bi bi-record-circle d-none d-lg-inline-flex'"
           :title="isCollapsed ? 'Expandir' : 'Colapsar'"
         ></i>
       </div>
