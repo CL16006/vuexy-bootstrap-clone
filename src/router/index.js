@@ -12,6 +12,11 @@ import LoginLayout from '@/layouts/LoginLayout.vue'
 import RegisterView from '@/views/RegisterView.vue'
 import ForgotPasswordView from '@/views/ForgotPasswordView.vue'
 import TestComponent from '@/components/admin/TestComponent.vue'
+import UserAccountComponent from '@/components/users/UserAccountComponent.vue'
+import UserSecurityComponent from '@/components/users/UserSecurityComponent.vue'
+import UserBillingComponent from '@/components/users/UserBillingComponent.vue'
+import UserNotificationsComponent from '@/components/users/UserNotificationsComponent.vue'
+import UserConnectionsComponent from '@/components/users/UserConnectionsComponent.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -81,6 +86,37 @@ const router = createRouter({
           path:'/admin/test',
           name:'adminTest',
           component: TestComponent,
+        }
+      ],
+    },
+    {
+      path: '/user',
+      component: () => import('../layouts/AdminLayout.vue'),
+      children: [
+        {
+          path:'/user/account',
+          name:'userAccount',
+          component: UserAccountComponent,
+        },
+        {
+          path:'/user/security',
+          name:'userSecurity',
+          component: UserSecurityComponent,
+        },
+        {
+          path:'/user/billing',
+          name:'userBilling',
+          component: UserBillingComponent,
+        },
+        {
+          path:'/user/notifications',
+          name:'userNotifications',
+          component: UserNotificationsComponent,
+        },
+        {
+          path:'/user/connections',
+          name:'userConnections',
+          component: UserConnectionsComponent,
         }
       ],
     },
