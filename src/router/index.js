@@ -91,7 +91,7 @@ const router = createRouter({
     },
     {
       path: '/user',
-      component: () => import('../layouts/AdminLayout.vue'),
+      component: () => import('../layouts/UserLayout.vue'),
       children: [
         {
           path:'/user/account',

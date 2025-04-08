@@ -129,6 +129,7 @@ const linkList = [
   padding-top: 20px;
   transition: width 0.3s ease;
   overflow: hidden;
+  z-index: 1050;
 }
 
 .sidebar.collapsed {
