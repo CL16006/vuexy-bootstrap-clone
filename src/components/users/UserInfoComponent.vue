@@ -32,14 +32,7 @@
         <h6 class="m-3">Details</h6>
       </div>
       <div class="mb-2">
-        <p class="m-1"><span class="fw-semibold">Username: </span>@violet.dev</p>
-        <p class="m-1"><span class="fw-semibold">Email: </span>violet@example.com</p>
-        <p class="m-1"><span class="fw-semibold">Status: </span>active</p>
-        <p class="m-1"><span class="fw-semibold">Role: </span>author</p>
-        <p class="m-1"><span class="fw-semibold">Tax id.: </span>Tax-8965</p>
-        <p class="m-1"><span class="fw-semibold">Contact: </span>(123) 76543210</p>
-        <p class="m-1"><span class="fw-semibold">Languages: </span>French</p>
-        <p class="m-1"><span class="fw-semibold">Country: </span>England</p>
+        <p v-for="(item,index) in userInfo" v-bind:key="index" class="m-1"><span class="fw-semibold">{{ item.title }}: </span>{{ item.info }}</p>
       </div>
       <div class="my-3 text-center">
         <a href="#" class="btn btn-primary text-light m-3">Edit</a>
@@ -75,10 +68,46 @@
       </div>
       <p class="text-secondary">4 days remaining</p>
 
-        <a href="#" class="btn btn-primary text-light w-100">Upgrade</a>
+      <a href="#" class="btn btn-primary text-light w-100">Upgrade</a>
     </div>
   </div>
 </template>
+<script setup>
+const userInfo = [
+  {
+    title: 'Username',
+    info: '@violet.dev',
+  },
+  {
+    title:'Email',
+    info:'violet@example.com'
+  },
+  {
+    title:'Status',
+    info:'Active',
+  },
+  {
+    title:'Role',
+    info:'Author',
+  },
+  {
+    title:'Tax id.',
+    info:'Tax-8965',
+  },
+  {
+    title:'Contact',
+    info:'(123) 76543210',
+  },
+  {
+    title:'Languages',
+    info:'French',
+  },
+  {
+    title:'Country',
+    info:'England',
+  }
+]
+</script>
 <style scoped>
 .card {
   z-index: 1;
