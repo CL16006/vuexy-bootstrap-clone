@@ -1,5 +1,5 @@
 <template>
-  <div class="card mt-3" style="width: 22rem">
+  <div class="card mt-3" >
     <div class="card-body">
       <div class="row">
         <div class="col text-center">
@@ -40,7 +40,7 @@
       </div>
     </div>
   </div>
-  <div class="card mt-3" style="width: 22rem">
+  <div class="card mt-3">
     <div class="card-body">
       <p class="mt-3"><span class="badge text-secondary bg-primary">Standard</span></p>
       <p class="text-end">
