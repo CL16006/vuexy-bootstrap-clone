@@ -38,7 +38,15 @@
           </div>
           <p>{{ item.progress }}%</p>
         </td>
-        <td>{{ item.action }}</td>
+        <!-- Aqui tengo que agregar el botón de actions, es un ícono de tres puntos y se comporta como un menú de lista -->
+        <td>
+          <button type="button" class="btn" @click="actions=!actions"><i class="bi bi-three-dots-vertical"></i></button>
+          <ul class="list-group" v-if="actions">
+            <li class="list-group-item">{{ item.action[0] }}</li>
+            <li class="list-group-item">{{ item.action[1] }}</li>
+            <li class="list-group-item text-danger">{{ item.action[2] }}</li>
+          </ul>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -71,6 +79,7 @@
 import { ref, computed } from 'vue'
 const currentPage = ref(1)
 const itemsPerPage = ref(5)
+const actions=ref(false)
 
 const totalPages = computed(() => {
   return Math.ceil(rows.value.length / itemsPerPage.value)
@@ -107,30 +116,14 @@ const rows = ref([
         name: 'Kim Karlos',
         urlImage: 'https://cdn.quasar.dev/img/avatar2.jpg',
       },
-      {
-        name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar3.jpg',
-      },
-      {
-        name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar4.jpg',
-      },
     ],
     progress: '45',
-    action: '',
+    action: ['details', 'archive', 'delete'],
   },
   {
     project: 'Website SEO',
     leader: 'Eileen',
     team: [
-      {
-        name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar1.jpg',
-      },
-      {
-        name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar2.jpg',
-      },
       {
         name: 'Kim Karlos',
         urlImage: 'https://cdn.quasar.dev/img/avatar3.jpg',
@@ -141,7 +134,7 @@ const rows = ref([
       },
     ],
     progress: '30',
-    action: '',
+    action: ['details', 'archive', 'delete'],
   },
   {
     project: 'Website SEO',
@@ -157,24 +150,16 @@ const rows = ref([
       },
       {
         name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar3.jpg',
-      },
-      {
-        name: 'Kim Karlos',
         urlImage: 'https://cdn.quasar.dev/img/avatar4.jpg',
       },
     ],
     progress: '10',
-    action: '',
+    action: ['details', 'archive', 'delete'],
   },
   {
     project: 'Website SEO',
     leader: 'Eileen',
     team: [
-      {
-        name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar1.jpg',
-      },
       {
         name: 'Kim Karlos',
         urlImage: 'https://cdn.quasar.dev/img/avatar2.jpg',
@@ -189,7 +174,7 @@ const rows = ref([
       },
     ],
     progress: '25',
-    action: '',
+    action: ['details', 'archive', 'delete'],
   },
   {
     project: 'Website SEO',
@@ -198,10 +183,6 @@ const rows = ref([
       {
         name: 'Kim Karlos',
         urlImage: 'https://cdn.quasar.dev/img/avatar1.jpg',
-      },
-      {
-        name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar2.jpg',
       },
       {
         name: 'Kim Karlos',
@@ -213,7 +194,7 @@ const rows = ref([
       },
     ],
     progress: '5',
-    action: '',
+    action: ['details', 'archive', 'delete'],
   },
   {
     project: 'Website SEO',
@@ -226,10 +207,6 @@ const rows = ref([
       {
         name: 'Kim Karlos',
         urlImage: 'https://cdn.quasar.dev/img/avatar2.jpg',
-      },
-      {
-        name: 'Kim Karlos',
-        urlImage: 'https://cdn.quasar.dev/img/avatar3.jpg',
       },
       {
         name: 'Kim Karlos',
@@ -261,7 +238,7 @@ const rows = ref([
       },
     ],
     progress: '80',
-    action: '',
+    action: ['details', 'archive', 'delete'],
   },
   {
     project: 'Website SEO',
@@ -285,7 +262,7 @@ const rows = ref([
       },
     ],
     progress: '100',
-    action: '',
+    action: ['details', 'archive', 'delete'],
   },
 ])
 </script>
