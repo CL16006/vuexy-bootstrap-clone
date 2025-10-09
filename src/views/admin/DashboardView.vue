@@ -1,9 +1,28 @@
-<script setup></script>
+<script setup>
+const chartOptions = {
+  chart: {
+    id: 'basic-line',
+    toolbar: {
+      show: false
+    }
+  },
+  xaxis: {
+    categories: [1, 2, 3, 4, 5,6]
+  }
+}
+
+const series = [
+  {
+    name: 'Sales',
+    data: [30, 40, 35, 50, 49,50]
+  }
+]
+</script>
 <template>
   <div class="row mt-4">
     <div class="col col-4">
       <div class="card shadow">
-        <div class="card-body">
+        <div class="card-body mx-3">
           <div class="row align-items-center">
             <div class="col-8">
               <p class="text-dark h5">Congratulations John!🎉</p>
@@ -20,7 +39,7 @@
     </div>
     <div class="col col-8">
       <div class="card shadow">
-        <div class="card-body">
+        <div class="card-body mx-3">
           <h5 class="card-title text-dark mt-3 mb-2">Statistics</h5>
           <div class="row mt-5 mb-3">
             <div class="col">
@@ -64,6 +83,7 @@
                 <div class="col ps-0">
                   <h6 class="text-dark mb-0">$9745</h6>
                   <p class="text-secondary mb-0"><small>Revenue</small></p>
+                </div>
               </div>
             </div>
           </div>
@@ -71,6 +91,25 @@
       </div>
     </div>
   </div>
+  <div class="row mt-4">
+    <div class="col col-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <p class="text-dark h5">Profit</p>
+          <p class="text-secondary">Last Month</p>
+          <apexchart type="line" height="350" :options="chartOptions" :series="series" />
+          <div class="row">
+            <div class="col"><p class="h3 text-dark">624k</p></div>
+            <div class="col"><p class="text-info">+8.24%</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col col-6">
+      <div class="card">
+        <h1>grafico 2</h1>
+      </div>
+    </div>
   </div>
 </template>
 <style scoped>
